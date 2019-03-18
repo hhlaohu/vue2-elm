@@ -1,11 +1,11 @@
  <template>
     <div>
         <section v-if="!showLoading" class="shop_container">
-            <nav class="goback" @click="goback">
-                <svg width="4rem" height="100%" xmlns="http://www.w3.org/2000/svg" version="1.1">
-                    <polyline points="12,18 4,9 12,0" style="fill:none;stroke:rgb(255,255,255);stroke-width:3"/>
-                </svg>
-            </nav>
+            <!--<nav class="goback" @click="goback">-->
+                <!--<svg width="4rem" height="100%" xmlns="http://www.w3.org/2000/svg" version="1.1">-->
+                    <!--<polyline points="12,18 4,9 12,0" style="fill:none;stroke:rgb(255,255,255);stroke-width:3"/>-->
+                <!--</svg>-->
+            <!--</nav>-->
             <header class="shop_detail_header" ref="shopheader" :style="{zIndex: showActivities? '14':'10'}">
                 <img :src="imgBaseUrl + shopDetailData.image_path" class="header_cover_img">
                 <section class="description_header">
@@ -15,8 +15,8 @@
                         </section>
                         <section class="description_right">
                             <h4 class="description_title ellipsis">{{shopDetailData.name}}</h4>
-                            <p class="description_text">商家配送／{{shopDetailData.order_lead_time}}分钟送达／配送费¥{{shopDetailData.float_delivery_fee}}</p>
-                            <p class="description_promotion ellipsis">公告：{{promotionInfo}}</p>
+                            <p class="description_text"></p>
+                            <p class="description_promotion ellipsis">桌牌号：{{shopDetailData.id}}</p>
                         </section>
                         <svg width="14" height="14" xmlns="http://www.w3.org/2000/svg" version="1.1" class="description_arrow" >
                             <path d="M0 0 L8 7 L0 14"  stroke="#fff" stroke-width="1" fill="none"/>
@@ -63,10 +63,10 @@
             </transition>
             <section class="change_show_type" ref="chooseType">
                 <div>
-                    <span :class='{activity_show: changeShowType =="food"}' @click="changeShowType='food'">商品</span>
+                    <span :class='{activity_show: changeShowType =="food"}' @click="changeShowType='food'">点餐</span>
                 </div>
                 <div>
-                    <span :class='{activity_show: changeShowType =="rating"}' @click="changeShowType='rating'">评价</span>
+                    <span :class='{activity_show: changeShowType =="rating"}' @click="changeShowType='rating'">余额</span>
                 </div>
             </section>
             <transition name="fade-choose">
